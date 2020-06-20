@@ -2,9 +2,13 @@ package main
 
 import (
 	"github.com/alittlebrighter/embd"
-	_ "github.com/alittlebrighter/embd/host/rpi"
+	rpi "github.com/alittlebrighter/embd/host/rpi"
 	"github.com/alittlebrighter/embd/sensor/mcp9808"
 )
+
+func init() {
+	rpi.HostInit()
+}
 
 type Thermometer struct {
 	sensor *mcp9808.MCP9808
