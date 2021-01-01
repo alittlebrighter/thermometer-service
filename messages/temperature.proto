@@ -1,0 +1,18 @@
+syntax = "proto3";
+package messages;
+import "actor.proto";
+
+enum TemperatureUnits {
+    celsius = 0;
+    fahrenheit = 1;
+}
+
+message TemperatureRead {
+    actor.PID Sender = 1; // this is the PID the remote actor should reply to
+    oneof result {
+        double value = 1;
+        string error = 2;
+    }
+    TemperatureUnits units = 3;
+    string location = 4;
+}

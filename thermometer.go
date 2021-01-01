@@ -1,4 +1,7 @@
+//go:generate protoc -I=. -I=$GOPATH/src --gogoslick_out=./messages messages/temperature.proto
 package main
+
+//capnp generate capnp compile -I$GOPATH/src/zombiezen.com/go/capnproto2/std -ogo models/temperature.capnp
 
 import (
 	"github.com/alittlebrighter/embd"
